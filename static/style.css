@@ -1,0 +1,45 @@
+body {
+    background-color: #CCE0D1;
+    font-family: 'Montserrat';
+    margin-left: 15vw;
+    font-size: 1.1rem;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vw;
+    background-color: #E6EFE8;
+    width: 40vw;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+input {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 5px;
+    border: hidden;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: 2px solid grey;
+    /* border: 2px solid grey; */
+    /* border-color: grey; */
+}
+
+#submitBtn {
+    background-color: #44633F;
+    color: white;
+    padding: 10px;
+}
+
+#submitBtn:hover {
+    cursor: pointer;
+}

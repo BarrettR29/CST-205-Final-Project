@@ -5,17 +5,32 @@
     <meta charset="UTF-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
     <title> CST205 Group 3702 </title>
 </head>
 
 <body>
-    <h1>Welcome</h1>
-    <form action = "/" method = "POST">
-    <label for = "imagedescription" > Input an image description for your playlist </label><br>
-    <input type = "text" placeholder = "Enter here" name = "idescript"><br>
-    <label for = "genre" > Input a genre for your playlist </label><br>
-    <input type = "text" placeholder = "Enter here" name = "genre"><br> <br>
-    <input type = "submit" value = "Submit">
-    </form>
+    <h1>Generate Your Playlist</h1>
+    <div class="subtitle"> 
+        <h3>Fill in the form to create your personal playlist & custom cover!</h3>
+    </div>
+
+    <div class="formContainer">
+        <h2>Playlist Form</h4>
+        <form action = "/" method = "POST">
+            <label for = "imagedescription" > Input an image description for your playlist: </label><br>
+            <input type = "text" placeholder = "Enter here" name = "idescript"><br>
+            <label for = "genre" > Input a genre for your playlist: </label><br>
+            <input type = "text" placeholder = "Enter here" name = "genre"><br>
+            <input id="submitBtn" type = "submit" value = "Submit">
+        </form>
+    </div>
+    
 </body>
 </html>
