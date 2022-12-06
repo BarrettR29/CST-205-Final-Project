@@ -3,12 +3,13 @@ import os
 import openai
 import urllib.request
 import re
+import credentials
 # from flask_bootstrap import Bootstrap5, Bootstrap
 # flask --app temp.py --debug run 
 app = Flask(__name__)
 # boostrap = Bootstrap(app)
 
-openai.api_key = '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'
+
 
 
 @app.route('/')
