@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,7 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+    
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     
@@ -19,22 +18,30 @@
 </head>
 
 <body>
-    <h1>Generate Your Playlist</h1>
-    <div class="subtitle"> 
-        <h3>Fill in the form to create your personal playlist & custom cover!</h3>
-    </div>
+    <h1>Your Playlist</h1>
 
     <div class="formContainer">
-        <h2>Playlist Form</h4>
-        <form action = "/" method = "POST">
-            <label for = "imagedescription" > Input an image description for your playlist: </label><br>
-            <input type = "text" placeholder = "Enter here" name = "idescript"><br>
-            <label for = "genre" > Input songs for your playlist seperated by commas (e.g. Song 1, Song 2, Song 3): </label><br>
-            <input type = "text" placeholder = "Enter here" name = "genre"><br>
-            <input id="submitBtn" type = "submit" value = "Submit">
-        </form>
-    </div>
+        <img id="ai_img" src="" alt="">
 
+        <div id="yt_vids">
+            
+        </div>
+    </div>
     
+
+    <script>
+        const img_url = {{ img_url|tojson }}
+        const yt_url = {{ yt_url|tojson }}
+        var count = 0;
+
+        document.querySelector("#ai_img").src = img_url;
+
+        {% for url in yt_url %}
+            // $("#yt_vids").append("<h1> TEST </h1>");
+            
+            $('#yt_vids').append(`<iframe src = "${yt_url[count]}"> </iframe> <br>`);
+            count = count+1;
+        {% endfor %}
+    </script>
 </body>
 </html>
