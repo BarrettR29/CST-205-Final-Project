@@ -1,6 +1,10 @@
+# Authors
 # Sebastian Vera : worked on youtube search and open ai image search
 # Camille Clendenon : worked on flask website and implementing search bars
 # Barrett Reinhard : worked on css and rendering images and youtube videos on page
+# Course:CST 205
+# 12/16/22
+# Abstract: This is a flask application that upon taking user input will render a ai generated image and youtube videos to webpate
 
 from flask import Flask, request, render_template
 # from jinja2 import Environment, FileSystemLoader
@@ -37,7 +41,8 @@ def image():
     youtube_search_list = []
     #splits the searches by the comma
     genre = request.form.get("genre").split(", ")
-    #makes every element in list have a + in place of a space
+    #the string comprehension makes every element in list have a + in place of a space
+    #url encodings need a + instead of space
     genre = [string.replace(' ', '+') for string in genre]
     for youtube_search in genre:
         html = urllib.request.urlopen(f"https://www.youtube.com/results?search_query={youtube_search}")
@@ -52,6 +57,7 @@ def image():
 
     # return "Your description was: \"" + image_url + "\" and your Genre was: \"" + str(youtube_search_list) + "\""
 
+        #renders playlist.html while passing the image url and list of youtube urls as params
     return render_template('playlist.html', img_url = image_url, yt_url = youtube_search_list)
 
 if __name__ == '__main__':
